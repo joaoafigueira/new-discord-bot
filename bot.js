@@ -23,6 +23,8 @@ client.on("message", async message => {  //monitora tudo que está acontecendo n
 
     if (comando === "teste") {
         message.channel.send("teste1234");
+    }else{
+        message.channel.send("Comando não encontrado - digite !info para saber mais");
     }
 
 });
