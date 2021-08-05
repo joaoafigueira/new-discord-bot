@@ -16,24 +16,34 @@ client.on("message", async message => {  //monitora tudo que está acontecendo n
     if (message.channel.type === "dm") return; //não responda comandos enviados por dm
 
 
+
+
+    
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const comando = args.shift().toLowerCase();
+    const listaDeComandos = new Array(`info`);
+    let possuiComando = false;
 
-    if (comando === "info") {
+
+
+
+    if ( comando === listaDeComandos[0]) {
 
         const embed = new MessageEmbed();
+        possuiComando = true;
         embed.setColor('#0099ff');
         embed.setTitle('Some title');
         message.channel.send(embed)
-    }
 
+    }
+       
      
 
 
 });
 
 
-client.login(config.token);
+client.login(config.token); //setando o token e terminando o bot
 
 
 
