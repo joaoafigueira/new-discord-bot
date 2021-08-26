@@ -4,10 +4,14 @@ const client = new Discord.Client(); //conectando ao cliente
 const config = require("./config.json"); //fazendo o login do requiremento do token
 const { MessageEmbed } = require('discord.js');
 const path = require('path');
-let isReady = true;
+const commands = require('./audio-command.js');
+
+
+
 
 client.on('ready', () => {
     client.user.setActivity("!info", { type: "LISTENING" })
+    console.log('The client is ready');
 });
 
 
@@ -52,34 +56,16 @@ client.on("message", async message => {  //monitora tudo que está acontecendo n
       embed.setAuthor('New', 'https://cdn.discordapp.com/attachments/872157580418486322/877577467693518878/discord-logo.png')
       embed.setThumbnail('https://cdn.discordapp.com/attachments/720410505742778388/875543822845771776/unknown.png')
       embed.addFields(
-          { name: 'Comandos do Gian', value: '!porra' }
+          { name: 'Comandos do Gian', value: '!porra, !chupa' }
       );
-      embed.setImage('https://cdn.discordapp.com/attachments/872155221944598618/877629844853235722/unknown.png')
+      embed.setImage('https://cdn.discordapp.com/attachments/872155221944598618/877953023261941770/unknown.png')
       message.channel.send(embed);
-     
+      
 
     };
        
-    if(comando === 'porra'){
+   
 
-       const {voice} = message.member
-       
-       if(!voice.channelID){
-           message.reply('Você deve entrar em um canal de voz primeiro!');
-           return
-       };
-
-        voice.channel.join().then((connection) => {
-
-           const dispatcher = connection.play(path.join(__dirname, 'Oporra.mp3'))    
-            dispatcher.on('close', end => {
-                voice.channel.leave();
-          }) 
-        
-        }) 
-
-        
-    };
      
 
 
