@@ -4,7 +4,7 @@ const client = new Discord.Client(); //conectando ao cliente
 const config = require("./config.json"); //fazendo o login do requiremento do token
 const { MessageEmbed } = require('discord.js');
 const path = require('path');
-const commands = require('./audio-command.js');
+const commands = require('./commands/audio-command.js');
 
 
 

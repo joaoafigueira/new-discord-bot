@@ -1,6 +1,6 @@
 const Discord = require("discord.js"); //baixar a lib
 const client = new Discord.Client(); 
-const config = require("./config.json");
+const config = require("../config.json");
 const path = require('path');
 
 
@@ -31,7 +31,7 @@ client.on("message", async message => {
  
          voice.channel.join().then((connection) => {
  
-            const dispatcher = connection.play(path.join(__dirname, './audios/oporra.mp3'))    
+            const dispatcher = connection.play(path.join(__dirname, '../audios/oporra.mp3'))    
              dispatcher.on('close', end => {
                  voice.channel.leave();
            }) 
@@ -52,7 +52,7 @@ client.on("message", async message => {
   
           voice.channel.join().then((connection) => {
   
-             const dispatcher = connection.play(path.join(__dirname, './audios/chupa.mp3'))    
+             const dispatcher = connection.play(path.join(__dirname, '../audios/chupa.mp3'))    
               dispatcher.on('close', end => {
                   voice.channel.leave();
             }) 
